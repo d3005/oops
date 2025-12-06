@@ -1,25 +1,20 @@
 import React from "react";
 import "./App.css";
-import Hero3D from "./components/Hero3D";
-import AvengersSection from "./components/AvengersSection";
-import PillarsSection from "./components/PillarsSection";
-import JavaStructureSection from "./components/JavaStructureSection";
-import TokensSection from "./components/TokensSection";
-import DataTypesSection from "./components/DataTypesSection";
-import ConstantsSection from "./components/ConstantsSection";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import UnitPage from "./pages/UnitPage";
+import OOPBasicsPage from "./pages/OOPBasicsPage";
 
 function App() {
   return (
-    <div className="App min-h-screen bg-slate-900">
-      <Hero3D />
-      <AvengersSection />
-      <PillarsSection />
-      <JavaStructureSection />
-      <TokensSection />
-      <DataTypesSection />
-      <ConstantsSection />
-      <Footer />
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/unit/:unitId" element={<UnitPage />} />
+          <Route path="/oop-basics" element={<OOPBasicsPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
